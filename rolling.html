@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .banner_wrap {
+        display: flex;
+        overflow: hidden;
+      }
+      .banner_wrap .rolling-list ul {
+        display: flex;
+      }
+      .banner_wrap .rolling-list ul li {
+        width: 180px;
+        /* height: 276px; */
+        box-sizing: border-box;
+        margin: 0 3px;
+        padding: 46px 31px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .banner_wrap .rolling-list ul li .image-wrap {
+        width: 180px;
+        flex-shrink: 0;
+      }
+      .banner_wrap .rolling-list ul li .image-wrap > img {
+        width: 100%;
+      }
+      .banner_wrap .rolling-list ul li .desc {
+        font-family: 'BMJUA';
+      }
+      .banner_wrap .rolling-list ul li .desc strong {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
+      .banner_wrap .rolling-list ul li .desc span {
+        font-size: 18px;
+        line-height: 1.2;
+      }
+
+      /*  */
+      .rolling-list.original {
+        animation: rollingleft1 60s linear infinite;
+      }
+      .rolling-list.clone {
+        animation: rollingleft2 60s linear infinite;
+      }
+
+      @keyframes rollingleft1 {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(-100%);
+        }
+        50.01% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes rollingleft2 {
+        0% {
+          transition: translateX(0);
+        }
+        100% {
+          transform: translateX(-200%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner_wrap">
+      <!-- 배너표시영역 -->
+      <div class="rolling-list">
+        <!-- 원본배너 -->
+        <ul>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (8).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (9).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (10).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (11).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (12).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (13).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (14).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (15).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (16).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (17).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (18).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (19).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (20).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (21).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (22).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (23).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (24).png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="image-wrap">
+              <img src="src/img/image (25).png" alt="" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // 롤링 배너 복제본 생성
+      let roller = document.querySelector('.rolling-list');
+      roller.id = 'roller1'; // 아이디 부여
+
+      let clone = roller.cloneNode(true);
+      // cloneNode : 노드 복제. 기본값은 false. 자식 노드까지 복제를 원하면 true 사용
+      clone.id = 'roller2';
+      document.querySelector('.banner_wrap').appendChild(clone); // wrap 하위 자식으로 부착
+
+      document.querySelector('#roller1').style.left = '0px';
+      document.querySelector('#roller2').style.left =
+        document.querySelector('.rolling-list ul').offsetWidth + 'px';
+      // offsetWidth : 요소의 크기 확인(margin을 제외한 padding값, border값까지 계산한 값)
+
+      roller.classList.add('original');
+      clone.classList.add('clone');
+    </script>
+  </body>
+</html>

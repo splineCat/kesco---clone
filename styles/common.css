@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* reset */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+i,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+fieldset,
+form,
+select,
+option,
+input,
+footer,
+header,
+nav,
+section,
+video {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-size: 15px;
+  font-style: none;
+  font-weight: normal;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  color: #000;
+  /* text-decoration: underline; */
+}
+button,
+fieldset {
+  border: 0;
+  background-color: transparent;
+}
+
+/* base */
+body {
+  font-size: 15px;
+  font-family: 'Roboto', 'Noto Sans KR', 'sans-serif';
+}
+h1,
+h2,
+h3,
+h4,
+h6 {
+  font-size: 1.2rem;
+}
+
+/* 2. 공용클래스(공통디자인) */
+.wrap {
+  position: relative;
+  max-width: 1280px;
+  margin: auto;
+  /* border: 1px solid #000; */
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+.blind,
+.sound_only {
+  position: absolute;
+  left: -9999em;
+}
+.visually-hidden {
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+  width: 0;
+  height: 0;
+}
+.m0 {
+  margin: 0 !important;
+}
+.p0 {
+  padding: 0 !important;
+}
+.bd0 {
+  border-width: 0 !important;
+}
+
+/* header, footer */
+
+.box_parent {
+}
+
+.box_parent p {
+  box-sizing: border-box;
+  border: 1px solid #f00;
+  height: 50px;
+}

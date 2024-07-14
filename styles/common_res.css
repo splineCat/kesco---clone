@@ -1,0 +1,10 @@
+@charset "utf-8";
+@media screen and (min-width:480px){
+    .box_parent {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .box_parent p {
+        width: 50%;
+    }
+}

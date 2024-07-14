@@ -1,0 +1,497 @@
+@charset "utf-8";
+@media screen and (min-width:480px){
+    .main_sec {
+        padding: 110px 0;
+    }
+    .main_visual_sec {
+        height: 100vh;
+        background: url('../src/img/main_visual1.png') center center / cover no-repeat;
+        /* transition: background-image 0.3s ease-in-out; */
+    }
+    .main_news_sec {background: url('../src/img/news_row_bg.jpg') center center / cover no-repeat;}
+    .main_client_sec {background: url('../src/img/client_row_bg.jpg') center center / cover no-repeat;}
+    .main_information_sec {background-color: #81dd86;}
+
+    /* * {border: 1px solid #000;} */
+
+    /* 1. 메인영역 */
+    .main_container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_inner {
+        display: inline-block;
+        text-align: center;
+    }
+    .main_txt_box {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 95px;
+        padding: 0 47px 40px;
+        font-size: 3rem;
+        color: #fff;
+        background: url(../src/img/visual_txt_line.png) center bottom / 100% no-repeat;
+    }
+    .main_txt_box p {
+        margin-bottom: 15px;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 1.2px;
+    }
+    .main_txt_box::before{
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 69px;
+        height: 62px;
+        background: url(../src/img/visual_txt_deco.png) center no-repeat;
+    }
+    .main_txt_box span {
+        font-weight: 500;
+    }
+    .main_link_box {
+        /* visibility: visible;
+        animation-delay: 0.5s;
+        animation-name: fadeInUp; */
+    }
+    .main_link_box a {
+        display: inline-block;
+        position: relative;
+        width: 159px;
+        height: 160px;
+        margin-right: 45px;
+        padding-top: 40px;
+        z-index: 1;
+        vertical-align: bottom;
+    }
+    .main_link_box a:last-child {
+        margin: 0;
+    }
+    .main_link_box a::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -10;
+        width: 100%;
+        height: 100%;
+        background: url(../src/img/visual_quick_octa.png) center / 100% no-repeat;
+        transition: all 0.5s;
+    }
+    .main_link_box a:hover::before {
+        animation: rotate_image 1s forwards;
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes rotate_image{
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+    .link_txt {
+        display: inline-block;
+        padding-top: 63px;
+        color: #fff;
+        font-size: 15px;
+    }
+    .main_link_box .item1 {background: url(../src/img/visual_quick_ico1.png) center 0 no-repeat;}
+    .main_link_box .item2 {background: url(../src/img/visual_quick_ico2.png) center 0 no-repeat;}
+    .main_link_box .item3 {background: url(../src/img/visual_quick_ico3.png) center 0 no-repeat;}
+    .main_link_box .item4 {background: url(../src/img/visual_quick_ico4.png) center 0 no-repeat;}
+
+
+
+    /* 2. 뉴스영역 news_box */
+    .news_container {}
+    .news_inner1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 328px;
+        margin-bottom: 30px;
+    }
+    .news_box {
+        display: flex;
+        width: 66.15%;
+        height: 100%;
+    }
+    .news_tab_box {
+        width: 25%;
+        height: 100%;
+        padding: 32px 0 32px 25px;
+        background-image: url('../src/img/news_tab_bg.jpg');
+        color: #fff;
+    }
+    .news_title {
+        display: flex;
+        justify-content: space-between;
+    }
+    .news_title h3 {
+        padding-left: 10px;
+        padding-right: 25px;
+        margin-bottom: 10px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+    .news_title a {
+        position: relative;
+        right: 25px;
+        top: 10px;
+        width: 14px;
+        height: 14px;
+    }
+    .news_title a::before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: calc(50% - 1px);
+        top: calc(50% - 7px);
+        width: 2px;
+        height: 14px;
+        background-color: #fff;
+    }
+    .news_title a::after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: calc(50% - 7px);
+        top: calc(50% - 1px);
+        width: 14px;
+        height: 2px;
+        background-color: #fff;
+    }
+    .news_tab .tab_list {
+        position: relative;
+    }
+    .news_tab li button {
+        display: block;
+        width: 100%;
+        padding: 15px 0 15px 10px;
+        text-align: left;
+        font-size: 1.1rem;
+        color: #fff;
+    }
+    .news_tab .tab_list.active {
+        width: calc(100% + 20px);
+    }
+    .news_tab .tab_list.active button {
+        padding-left: 25px;
+        background: linear-gradient(45deg, #C12418, #F27E1B);
+    }
+    .news_tab li.active:before {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        border-top: 27px solid #fff;
+        border-left: 20px solid transparent;
+    }
+    .news_tab li.active::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        border-bottom: 27px solid #fff;
+        border-left: 20px solid transparent;
+    }
+    .news_tab li button::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 140px;
+        top: 50%;
+        width: 4px;
+        height: 8px;
+        margin-top: -4px;
+        background-color: #fff;
+        transform: skew(-25deg);
+    }
+    .list_box_wrap {
+        width: 75%;
+        height: 100%;
+        background-color: #fff;
+    }
+    .list_box {
+        display: none;
+        height: 100%;
+    }
+    .list_box.on {
+        display: block;
+    }
+    .list_box li {
+        float: left;
+        position: relative;
+        width: 50%;
+        height: 100%;
+    }
+    .list_box li:last-child {
+        border-left: 1px solid #ccc;
+    }
+    .list_box li a {
+        display: block;
+        padding: 67.5px 45px;
+    }
+    .tab_tit {
+        display: block;
+        position: absolute;
+        top: -20px;
+        left: calc(50% - 35px);
+        width: 70px;
+        height: 35px;
+        line-height: 2.3;
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+    }
+    .tab_tit::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: skew(-18deg);
+        z-index: -10;
+    }
+    .notice .tab_tit::before {
+        background-color: #0F316F;
+    }
+    .news .tab_tit::before {
+        background-color: #F2651A;
+    }
+    .news_tit {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+    }
+    .news_txt {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+    .news_date {
+        position: absolute;
+        bottom: 40px;
+        color: #888;
+    }
+    .news_list li .more_btn {}
+
+
+
+    /* 2. 뉴스영역 greet_box */
+    .greeting_box {
+        position: relative;
+        width: 31.65%;
+        height: 100%;
+        padding: 32px 25px;
+        color: #fff;
+        background: url(../src/img/greet_bg.png) left center no-repeat;
+    }
+    .greeting_txt {
+        font-size: 1.1rem;
+    }
+    .greeting_box span {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .greeting_box img {
+        position: absolute;
+        right: -5%;
+        bottom: 0;
+    }
+    .greeting_box a {
+        position: relative;
+        left: 15%;
+        bottom: -11%;
+        padding: 15px 50px;
+        color: #fff;
+        z-index: 1;
+    }
+    .greeting_box a::before{
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: 1px solid #fff;
+        background-color: rgba(0, 0, 0, 0.6);
+        transform: skew(-20deg);
+        z-index: -10;
+    }
+
+    /* 2. 뉴스영역 popup_box */
+    .news_inner2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 300px;
+    }
+    .popup_box {
+        position: relative;
+        overflow: hidden;
+        width: 34.5%;
+        height: 100%;
+    }
+    .popup_title {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 55px;
+        padding: 0 32px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+    }
+    .popup_title h3 {
+        flex-grow: 1; 
+        font-size: 1rem;
+    }
+    .popup_title button {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+        background-position: center;
+        background-size: 12px;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    .popup_title .btn_prev {
+        margin-left: 10px;
+        background-image: url(../src/img/popupzone_prev.png);
+    }
+    .popup_title .btn_play {background-image: url(../src/img/popupzone_play.png);}
+    .popup_title .btn_stop {background-image: url(../src/img/popupzone_stop.png);}
+    .popup_title .btn_next {background-image: url(../src/img/popupzone_next.png);}
+    .popup_list {
+        width: 300%;
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+    .popup_list li {
+        width: 440px;
+    }
+    .popup_list li:nth-child(1) {display: block;}
+    .popup_list a {
+        display: block;
+        height: 100%;
+    }
+    .popup_list img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* 2. 뉴스영역 issue_box */
+    .issue_box {
+        display: flex;
+        overflow: hidden;
+        width: 38%;
+        height: 100%;
+    }
+    .issue_box .img_box {
+        overflow: hidden;
+        width: 50%;
+        background-color: #fff;
+    }
+    .issue_box .img_box img {
+        display: block;
+        height: 100%;
+    }
+    .issue_box .txt_box {
+        width: 50%;
+        height: 100%;
+        padding: 40px 25px;
+        text-align: center;
+        background-color: #F8F8F8;
+    }
+    .issue_box .txt_box h3 {
+        color: #bababa;
+        font-size: 0.9rem;
+    }
+    .issue_box .txt_box span {
+        color: #b81418;
+        font-weight: 600;
+    }
+    .issue_date{
+        display: block;
+        margin: 20px 0;
+    }
+    .issue_day {
+        font-size: 2rem;
+        border-bottom: 2px solid #b81418;
+    }
+    .issue_box .txt_box p {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    /* 2. 뉴스영역 bus_sch_box */
+    .bus_sch_box {
+        overflow: hidden;
+        width: 23%;
+        height: 100%;
+        padding: 27px;
+        background-color: #F5F5F5;
+    }
+    .bus_sch_box h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.3;
+        background-image: url(../src/img/bus_sch_ico.png);
+        background-position: 100% 0;
+        background-repeat: no-repeat;
+    }
+    .bus_sch_box h3 span {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .sch_form {
+        margin: 10px 0;
+    }
+    .sch_form select {
+        width: 100%;
+        height: 38px;
+        margin-bottom: 5px;
+        padding: 0 15px;
+        font-size: 1rem;
+        border: 1px solid #dcdcdc;
+    }
+    .sch_form input {
+        width: 100%;
+        height: 38px;
+        margin-bottom: 5px;
+        padding: 0 15px;
+        font-size: 1rem;
+        border: 1px solid #dcdcdc;
+    }
+    .sch_form button {
+        width: 100%;
+        height: 45px;
+        color: #fff;
+        font-size: 1.1rem;
+        background-color: #0F316F;
+    }
+}
