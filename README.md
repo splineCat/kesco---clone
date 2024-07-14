@@ -5,3 +5,5 @@
 목적 : HTML/ CSS의 이해, 자바스크립트로 기능 구현 연습
 
 수정사항 : 유효성 검사 / 반응형 웹페이지
+
+호스팅 URL : http://kesco.dothome.co.kr/
